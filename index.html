@@ -20,6 +20,7 @@
 
         p {
             animation: fadeIn 1.5s ease-in-out;
+            color: #fff;
         }
 
         .certificate {
@@ -34,27 +35,15 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             opacity: 0;
             animation: fadeUp 1s ease forwards;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
         }
 
         .certificate:hover {
             transform: scale(1.02);
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-        }
-
-        a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #257dbc;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        a:hover {
-            background-color: #19c55b;
-            transform: translateY(-2px);
         }
 
         img {
@@ -63,7 +52,7 @@
             transition: transform 0.3s ease;
         }
 
-        img:hover {
+        .certificate:hover img {
             transform: scale(1.05);
         }
 
@@ -87,21 +76,17 @@
 <body>
 
     <h1>My Certificates</h1>
-    <p>Click below to view or download my certificates</p>
+    <p>Click on any certificate to view or download</p>
 
-    <div class="certificate" style="animation-delay: 0.3s;">
+    <a href="Bachelor-Degree.jpg" target="_blank" class="certificate" style="animation-delay: 0.3s;">
         <h2>Bachelor's Degree in Information Technology</h2>
-        <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000" alt="Bachelor's Degree">
-        <br>
-        <a href="https://github.com/Ahmedyousif1/My_Certificates/edit/main/index.html#L96C26" target="_blank">View / Download</a>
-    </div>
+        <img src="Bachelor-Degree.jpg" alt="Bachelor's Degree">
+    </a>
 
-    <div class="certificate" style="animation-delay: 0.6s;">
+    <a href="CCNA.jpg" target="_blank" class="certificate" style="animation-delay: 0.6s;">
         <h2>CCNA: Introduction to Networks</h2>
-        <img src=" https://img.icons8.com/?size=100&id=2eOydRW09MDo&format=png&color=000000" alt="CCNA Intro">
-        <br>
-        <a href="CCNA.jpg" target="_blank">View</a>
-    </div>
+        <img src="CCNA.jpg" alt="CCNA Intro">
+    </a>
 
 </body>
 </html>
