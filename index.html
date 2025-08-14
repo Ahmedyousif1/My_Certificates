@@ -7,23 +7,52 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+            margin: 0;
+            padding: 0;
             text-align: center;
-            padding: 20px;
             animation: fadeIn 1s ease-in-out;
         }
 
-        h1 {
-            color: #333;
+        header {
+            background: #257dbc;
+            padding: 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             animation: slideDown 1s ease-in-out;
         }
 
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
         p {
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .download-all {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #19c55b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             animation: fadeIn 1.5s ease-in-out;
         }
 
+        .download-all:hover {
+            background-color: #0e8a3f;
+            transform: translateY(-3px);
+        }
+
         .certificate {
-            background: #ffffff;
+            background: white;
             border: 2px solid #257dbc;
             border-radius: 10px;
             margin: 20px auto;
@@ -82,12 +111,23 @@
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            p { font-size: 1rem; }
+            .certificate { max-width: 90%; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>My Certificates</h1>
-    <p>Click below to view or download my certificates</p>
+    <header>
+        <h1>My Certificates</h1>
+        <p>Click below to view or download my certificates</p>
+    </header>
+
+    <a class="download-all" href="all-certificates.zip" download>⬇ Download All Certificates</a>
 
     <div class="certificate" style="animation-delay: 0.3s;">
         <h2>Bachelor's Degree in Information Technology</h2>
