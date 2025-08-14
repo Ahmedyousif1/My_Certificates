@@ -11,7 +11,6 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
         }
 
         header {
@@ -43,7 +42,6 @@
             text-decoration: none;
             border-radius: 6px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         .download-all:hover {
@@ -60,9 +58,13 @@
             max-width: 500px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transform: scale(0.95);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
             opacity: 0;
-            animation: fadeUp 1s ease forwards;
+        }
+
+        .certificate.show {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .certificate:hover {
@@ -97,18 +99,8 @@
         }
 
         /* Animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         @keyframes slideDown {
             from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes fadeUp {
-            from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
@@ -129,19 +121,48 @@
 
     <a class="download-all" href="all-certificates.zip" download>⬇ Download All Certificates</a>
 
-    <div class="certificate" style="animation-delay: 0.3s;">
+    <div class="certificate">
         <h2>Bachelor's Degree in Information Technology</h2>
         <img src="Bachelor-Degree.jpg" alt="Bachelor's Degree">
         <br>
         <a href="Bachelor-Degree.jpg" target="_blank">View / Download</a>
     </div>
 
-    <div class="certificate" style="animation-delay: 0.6s;">
+    <div class="certificate">
         <h2>CCNA: Introduction to Networks</h2>
         <img src="CCNA.jpg" alt="CCNA Intro">
         <br>
         <a href="CCNA.jpg" target="_blank">View / Download</a>
     </div>
+
+    <div class="certificate">
+        <h2>Cybersecurity Essentials</h2>
+        <img src="Cybersecurity.jpg" alt="Cybersecurity">
+        <br>
+        <a href="Cybersecurity.jpg" target="_blank">View / Download</a>
+    </div>
+
+    <script>
+        // Scroll Animation
+        const certificates = document.querySelectorAll('.certificate');
+
+        function checkCertificates() {
+            const triggerBottom = window.innerHeight * 0.85;
+
+            certificates.forEach(cert => {
+                const certTop = cert.getBoundingClientRect().top;
+
+                if (certTop < triggerBottom) {
+                    cert.classList.add('show');
+                } else {
+                    cert.classList.remove('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCertificates);
+        window.addEventListener('load', checkCertificates);
+    </script>
 
 </body>
 </html>
