@@ -87,7 +87,14 @@ nav a.active{
     animation:fade 1.5s ease;
 }
 
-.hero-text a{
+/* HERO BUTTONS */
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-main{
     padding:14px 35px;
     border-radius:40px;
     background:#00ffd5;
@@ -97,9 +104,26 @@ nav a.active{
     transition:.4s;
 }
 
-.hero-text a:hover{
-    transform:scale(1.1);
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
+.btn-cv{
+    padding:14px 35px;
+    border-radius:40px;
+    background:transparent;
+    color:#fff;
+    border:2px solid #00ffd5;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn-main:hover,
+.btn-cv:hover{
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.btn-cv:hover{
+    background:#00ffd5;
+    color:#000;
 }
 
 /* ===== IMAGE ===== */
@@ -245,6 +269,10 @@ footer{
         width:220px;
         height:220px;
     }
+
+    .hero-buttons{
+        justify-content:center;
+    }
 }
 </style>
 </head>
@@ -264,19 +292,24 @@ footer{
 <!-- HERO -->
 <div class="hero" id="home">
     <div class="hero-content">
+
         <div class="hero-text">
             <h1>Hi, I'm Ahmed 👋</h1>
             <p>
                 Information Technology Graduate<br>
                 Networking & Software Enthusiast
             </p>
-            <a href="#certificates">View My Certificates</a>
+
+            <div class="hero-buttons">
+                <a href="#certificates" class="btn-main">View My Certificates</a>
+                <a href="Ahmed_Yousif_CV.pdf" download class="btn-cv">Download CV</a>
+            </div>
         </div>
 
         <div class="hero-image">
-            <!-- ضع صورتك هنا -->
             <img src="my-photo.jpg" alt="Ahmed Photo">
         </div>
+
     </div>
 </div>
 
