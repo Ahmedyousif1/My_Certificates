@@ -1,100 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
-    <title>My Certificates</title>
-  <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000" alt="Bachelor's Degree">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #37a8ea, #1db1b6);
-            text-align: center;
-            padding: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Certificates</title>
 
-        h1, p, h2, h3 {
-            font-family: 'Times New Roman', serif;
-            font-weight: bold;
-        }
+<link rel="icon" type="image/png"
+href="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
 
-        h1 {
-            color: #000000ff;
-            animation: slideDown 1s ease-in-out;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        p {
-            animation: fadeIn 1.5s ease-in-out;
-            color: #000000ff;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        .certificate {
-            background: #ffffff;
-            border: 2px solid #257dbc;
-            border-radius: 10px;
-            margin: 20px auto;
-            padding: 15px;
-            max-width: 500px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transform: scale(0.95);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeUp 1s ease forwards;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-        }
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#2c9ad6,#1fd1c1);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:40px 20px;
+    animation: pageFade 1.2s ease;
+}
 
-        .certificate:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 1);
-        }
+h1{
+    color:#fff;
+    font-size:2.8rem;
+    margin-bottom:10px;
+    animation: titleDrop 1s ease;
+}
 
-        img {
-            max-width: 100%;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
-        }
+p{
+    color:#f1f1f1;
+    margin-bottom:40px;
+    animation: fadeIn 1.5s ease;
+}
 
-        .certificate:hover img {
-            transform: scale(1.05);
-        }
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    width:100%;
+    max-width:900px;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+.certificate{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius:20px;
+    padding:25px;
+    text-decoration:none;
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    transition:all .5s ease;
+    position:relative;
+    overflow:hidden;
+    opacity:0;
+    animation: cardUp 1s ease forwards;
+}
 
-        @keyframes slideDown {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+.certificate:nth-child(1){animation-delay:.3s;}
+.certificate:nth-child(2){animation-delay:.6s;}
 
-        @keyframes fadeUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-    </style>
+.certificate::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
+    transform:translateX(-100%);
+    transition:.6s;
+}
+
+.certificate:hover::before{
+    transform:translateX(100%);
+}
+
+.certificate:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+.certificate img{
+    width:90px;
+    margin:20px 0;
+    transition:.5s;
+}
+
+.certificate:hover img{
+    transform:scale(1.2) rotate(6deg);
+}
+
+h2{
+    font-size:1.4rem;
+    margin-bottom:10px;
+}
+
+h3{
+    font-size:1rem;
+    font-weight:400;
+    opacity:.9;
+}
+
+/* Animations */
+@keyframes pageFade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes titleDrop{
+    from{transform:translateY(-30px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes cardUp{
+    from{transform:translateY(40px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
+}
+</style>
 </head>
+
 <body>
 
-    <h1>𝐌𝐲 𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐞𝐬</h1>
-    <p>𝐂𝐥𝐢𝐜𝐤 𝐨𝐧 𝐚𝐧𝐲 𝐜𝐞𝐫𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐞 𝐭𝐨 𝐯𝐢𝐞𝐰</p>
+<h1>My Certificates</h1>
+<p>Click on any certificate to view</p>
 
-    <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg" target="_blank" class="certificate" style="animation-delay: 0.3s;">
-       <h2>𝐔𝐧𝐢𝐯𝐞𝐫𝐬𝐢𝐭𝐲 𝐝𝐞𝐠𝐫𝐞𝐞</h2>
-       <h3>𝐁𝐚𝐜𝐡𝐞𝐥𝐨𝐫'𝐬 𝐃𝐞𝐠𝐫𝐞𝐞 𝐢𝐧 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧 𝐓𝐞𝐜𝐡𝐧𝐨𝐥𝐨𝐠𝐲</h3>
-       <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000" alt="Bachelor's Degree">
-    </a>
+<div class="certificates">
 
-    <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg" target="_blank" class="certificate" style="animation-delay: 0.6s;">
-        <h2>𝐂𝐢𝐬𝐜𝐨 𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐞𝐝 𝐍𝐞𝐭𝐰𝐨𝐫𝐤 𝐀𝐬𝐬𝐨𝐜𝐢𝐚𝐭𝐞</h2>
-        <h3>𝐂𝐞𝐫𝐭𝐢𝐟𝐢𝐜𝐚𝐭𝐞 𝐨𝐟 𝐚𝐭𝐭𝐞𝐧𝐝𝐚𝐧𝐜𝐞 𝐚𝐭 𝐭𝐡𝐞 𝐭𝐫𝐚𝐢𝐧𝐢𝐧𝐠 𝐜𝐨𝐮𝐫𝐬𝐞</h3>
-        <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000" alt="CCNA Intro">
-    </a>
+<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
+target="_blank" class="certificate">
+    <h2>University Degree</h2>
+    <h3>Bachelor's Degree in Information Technology</h3>
+    <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
+</a>
+
+<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
+target="_blank" class="certificate">
+    <h2>CCNA Certificate</h2>
+    <h3>Cisco Certified Network Associate</h3>
+    <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
+</a>
+
+</div>
 
 </body>
 </html>
