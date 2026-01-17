@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,102 +9,250 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-html{scroll-behavior:smooth;}
-body{background:linear-gradient(135deg,#2c9ad6,#1fd1c1);color:#fff;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-/* NAVBAR */
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#2c9ad6,#1fd1c1);
+    color:#fff;
+}
+
+/* ===== NAVBAR ===== */
 nav{
-    position:fixed;top:0;width:100%;
-    padding:20px 8%;display:flex;
-    justify-content:space-between;align-items:center;
-    background:rgba(0,0,0,.15);backdrop-filter:blur(12px);
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
     z-index:100;
+    background:rgba(0,0,0,.15);
+    backdrop-filter:blur(12px);
 }
-.logo{font-size:1.6rem;font-weight:700;}
-nav a{color:#fff;text-decoration:none;margin-left:25px;opacity:.85;}
-nav a:hover,nav a.active{opacity:1;border-bottom:2px solid #00ffd5;}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 8% 0;}
-.hero-content{max-width:1100px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:60px;}
-.hero-text h1{font-size:3.2rem;animation:drop 1s ease;}
-.hero-text p{margin:15px 0 30px;opacity:.9;}
-.hero-buttons{display:flex;gap:20px;flex-wrap:wrap;}
-.btn-main,.btn-cv{
-    padding:14px 35px;border-radius:40px;
-    text-decoration:none;font-weight:600;transition:.4s;
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
 }
-.btn-main{background:#00ffd5;color:#000;}
-.btn-cv{border:2px solid #00ffd5;color:#fff;}
-.btn-main:hover,.btn-cv:hover{
-    transform:translateY(-4px) scale(1.05);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-}
-.btn-cv:hover{background:#00ffd5;color:#000;}
 
-/* IMAGE */
-.hero-image{position:relative;animation:up 1.2s ease;}
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    opacity:.85;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    opacity:1;
+    border-bottom:2px solid #00ffd5;
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 8% 0;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    max-width:1100px;
+    width:100%;
+}
+
+.hero-text h1{
+    font-size:3.2rem;
+    animation:drop 1s ease;
+}
+
+.hero-text p{
+    margin:15px 0 30px;
+    opacity:.9;
+    line-height:1.6;
+    animation:fade 1.5s ease;
+}
+
+.hero-text a{
+    padding:14px 35px;
+    border-radius:40px;
+    background:#00ffd5;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.hero-text a:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* ===== IMAGE ===== */
+.hero-image{
+    position:relative;
+    animation:up 1.2s ease;
+}
+
 .hero-image img{
-    width:280px;height:280px;border-radius:50%;
+    width:280px;
+    height:280px;
+    object-fit:cover;
+    border-radius:50%;
     border:6px solid rgba(255,255,255,.4);
-    object-fit:cover;box-shadow:0 20px 50px rgba(0,0,0,.35);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
 }
+
 .hero-image::before{
-    content:"";position:absolute;inset:-15px;
-    border-radius:50%;border:3px dashed #00ffd5;
+    content:"";
+    position:absolute;
+    inset:-15px;
+    border-radius:50%;
+    border:3px dashed #00ffd5;
     animation:rotate 12s linear infinite;
 }
 
-/* SECTIONS */
-section{padding:120px 8%;}
-section h2{text-align:center;font-size:2.5rem;margin-bottom:50px;}
+/* ===== SECTIONS ===== */
+section{
+    padding:120px 8%;
+}
 
-/* CERTIFICATES */
+section h2{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+/* ===== CERTIFICATES ===== */
 .certificates{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
 }
+
 .card{
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(15px);
-    border-radius:20px;padding:25px;text-align:center;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.25);
-    transition:.5s;animation:up 1s ease;
+    transition:.5s;
+    animation:up 1s ease;
 }
-.card:hover{transform:translateY(-12px) scale(1.03);}
-.card img{width:90px;margin:20px 0;transition:.5s;}
-.card:hover img{transform:rotate(8deg) scale(1.2);}
 
-.buttons{display:flex;justify-content:center;gap:15px;margin-top:15px;}
-.btn{padding:10px 22px;border-radius:30px;text-decoration:none;font-weight:600;}
-.view{background:#fff;color:#000;}
-.download{background:#00ffd5;color:#000;}
-.btn:hover{box-shadow:0 8px 25px rgba(0,0,0,.35);}
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+}
 
-/* CONTACT */
-.contact{text-align:center;opacity:.9;}
+.card img{
+    width:90px;
+    margin:20px 0;
+    transition:.5s;
+}
 
-/* FOOTER */
-footer{text-align:center;padding:30px;background:rgba(0,0,0,.2);}
+.card:hover img{
+    transform:rotate(8deg) scale(1.2);
+}
 
-/* ANIMATIONS */
-@keyframes drop{from{transform:translateY(-40px);opacity:0}to{transform:none;opacity:1}}
-@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
-@keyframes rotate{to{transform:rotate(360deg);}}
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
 
-/* RESPONSIVE */
+.btn{
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.4s;
+}
+
+.view{
+    background:#fff;
+    color:#000;
+}
+
+.download{
+    background:#00ffd5;
+    color:#000;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+/* ===== CONTACT ===== */
+.contact{
+    text-align:center;
+    opacity:.9;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,.2);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes drop{
+    from{transform:translateY(-40px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+@keyframes up{
+    from{transform:translateY(40px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+
+@keyframes rotate{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-    .hero-content{flex-direction:column-reverse;text-align:center;}
-    .hero-image img{width:220px;height:220px;}
-    .hero-buttons{justify-content:center;}
+    .hero-content{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-image img{
+        width:220px;
+        height:220px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
     <div class="logo">Ahmed Yousif</div>
     <div>
@@ -113,62 +262,70 @@ footer{text-align:center;padding:30px;background:rgba(0,0,0,.2);}
     </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero" id="home">
     <div class="hero-content">
-
         <div class="hero-text">
-            <h1>Hi, I'm Ahmed </h1>
-            <p>Information Technology Graduate<br>Networking & Software Enthusiast</p>
-            <div class="hero-buttons">
-                <a href="#certificates" class="btn-main">View My Certificates</a>
-                <a href="Ahmed_Yousif_CV.pdf" class="btn-cv" download>Download CV</a>
-            </div>
+            <h1>Hi, I'm Ahmed 👋</h1>
+            <p>
+                Information Technology Graduate<br>
+                Networking & Software Enthusiast
+            </p>
+            <a href="#certificates">View My Certificates</a>
         </div>
 
         <div class="hero-image">
-            <img src="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/ahmed.jpg" alt="Ahmed Photo">
+            <!-- ضع صورتك هنا -->
+            <img src="my-photo.jpg" alt="Ahmed Photo">
         </div>
-
     </div>
 </div>
 
+<!-- CERTIFICATES -->
 <section id="certificates">
-<h2>My Certificates</h2>
+    <h2>My Certificates</h2>
 
-<div class="certificates">
+    <div class="certificates">
 
-<div class="card">
-<h3>University Degree</h3>
-<p>Bachelor's in Information Technology</p>
-<img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
-<div class="buttons">
-<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/main/University_Certificate.jpg" target="_blank" class="btn view">View</a>
-<a href="https://github.com/Ahmedyousif1/My_Certificates/releases/tag/untagged-6cd683137bcf8a8ada06" class="btn download">Download</a>
-</div>
-</div>
+        <div class="card">
+            <h3>University Degree</h3>
+            <p>Bachelor's in Information Technology</p>
+            <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
+            <div class="buttons">
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
+                   target="_blank" class="btn view">View</a>
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
+                   download class="btn download">Download</a>
+            </div>
+        </div>
 
-<div class="card">
-<h3>CCNA Certificate</h3>
-<p>Cisco Certified Network Associate</p>
-<img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
-<div class="buttons">
-<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/main/CCNA_Certificate.jpg" target="_blank" class="btn view">View</a>
-<a href="https://github.com/Ahmedyousif1/My_Certificates/releases/download/v1.0/CCNA_Certificate.jpg" class="btn download">Download</a>
-</div>
-</div>
+        <div class="card">
+            <h3>CCNA Certificate</h3>
+            <p>Cisco Certified Network Associate</p>
+            <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
+            <div class="buttons">
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
+                   target="_blank" class="btn view">View</a>
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
+                   download class="btn download">Download</a>
+            </div>
+        </div>
 
-</div>
+    </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-<h2>Contact Me</h2>
-<div class="contact">
-📧 ahmed@email.com<br>
-🔗 GitHub | LinkedIn
-</div>
+    <h2>Contact Me</h2>
+    <div class="contact">
+        📧 ahmed@email.com <br>
+        🔗 GitHub | LinkedIn
+    </div>
 </section>
 
-<footer>© 2026 Ahmed Yousif | All Rights Reserved</footer>
+<footer>
+    © 2026 Ahmed Yousif | All Rights Reserved
+</footer>
 
 </body>
 </html>
