@@ -3,10 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Certificates</title>
-
-<link rel="icon" type="image/png"
-href="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
+<title>Ahmed Yousif | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -18,139 +15,254 @@ href="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    min-height:100vh;
-    background: linear-gradient(135deg,#2c9ad6,#1fd1c1);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:40px 20px;
-    animation: pageFade 1.2s ease;
-}
-
-h1{
+    background:linear-gradient(135deg,#2c9ad6,#1fd1c1);
     color:#fff;
-    font-size:2.8rem;
-    margin-bottom:10px;
-    animation: titleDrop 1s ease;
 }
 
-p{
-    color:#f1f1f1;
-    margin-bottom:40px;
-    animation: fadeIn 1.5s ease;
+/* ===== NAVBAR ===== */
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    z-index:100;
+    background:rgba(0,0,0,.15);
+    backdrop-filter:blur(10px);
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+    opacity:.85;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    opacity:1;
+    border-bottom:2px solid #00ffd5;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+/* ===== HERO ===== */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 8%;
+}
+
+.hero h1{
+    font-size:3rem;
+    animation:drop 1s ease;
+}
+
+.hero p{
+    margin:15px 0 30px;
+    opacity:.9;
+    animation:fade 1.5s ease;
+}
+
+.hero a{
+    padding:14px 35px;
+    border-radius:40px;
+    background:#00ffd5;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.hero a:hover{
+    transform:scale(1.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+/* ===== CERTIFICATES ===== */
+section{
+    padding:120px 8%;
+}
+
+section h2{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
 }
 
 .certificates{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
-    width:100%;
-    max-width:900px;
 }
 
-.certificate{
-    background:rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
     border-radius:20px;
     padding:25px;
-    text-decoration:none;
-    color:#fff;
-    box-shadow:0 15px 40px rgba(0,0,0,0.2);
-    transition:all .5s ease;
-    position:relative;
-    overflow:hidden;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    transition:.5s;
     opacity:0;
-    animation: cardUp 1s ease forwards;
+    animation:up 1s ease forwards;
 }
 
-.certificate:nth-child(1){animation-delay:.3s;}
-.certificate:nth-child(2){animation-delay:.6s;}
+.card:nth-child(1){animation-delay:.3s}
+.card:nth-child(2){animation-delay:.6s}
 
-.certificate::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,transparent,rgba(255,255,255,.4),transparent);
-    transform:translateX(-100%);
-    transition:.6s;
-}
-
-.certificate:hover::before{
-    transform:translateX(100%);
-}
-
-.certificate:hover{
+.card:hover{
     transform:translateY(-12px) scale(1.03);
-    box-shadow:0 25px 60px rgba(0,0,0,0.35);
 }
 
-.certificate img{
+.card img{
     width:90px;
     margin:20px 0;
     transition:.5s;
 }
 
-.certificate:hover img{
-    transform:scale(1.2) rotate(6deg);
+.card:hover img{
+    transform:rotate(8deg) scale(1.2);
 }
 
-h2{
-    font-size:1.4rem;
-    margin-bottom:10px;
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
 }
 
-h3{
-    font-size:1rem;
-    font-weight:400;
-    opacity:.9;
+.btn{
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:.9rem;
+    font-weight:600;
+    transition:.4s;
 }
 
-/* Animations */
-@keyframes pageFade{
-    from{opacity:0;}
-    to{opacity:1;}
+.view{
+    background:#fff;
+    color:#000;
 }
 
-@keyframes titleDrop{
-    from{transform:translateY(-30px);opacity:0;}
-    to{transform:translateY(0);opacity:1;}
+.download{
+    background:#00ffd5;
+    color:#000;
 }
 
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
 }
 
-@keyframes cardUp{
-    from{transform:translateY(40px);opacity:0;}
-    to{transform:translateY(0);opacity:1;}
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,.2);
+    margin-top:50px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes drop{
+    from{transform:translateY(-40px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+
+@keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+@keyframes up{
+    from{transform:translateY(40px);opacity:0}
+    to{transform:translateY(0);opacity:1}
 }
 </style>
 </head>
 
 <body>
 
-<h1>My Certificates</h1>
-<p>Click on any certificate to view</p>
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Ahmed Yousif</div>
+    <div>
+        <a href="#home" class="active">Home</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-<div class="certificates">
-
-<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
-target="_blank" class="certificate">
-    <h2>University Degree</h2>
-    <h3>Bachelor's Degree in Information Technology</h3>
-    <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
-</a>
-
-<a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
-target="_blank" class="certificate">
-    <h2>CCNA Certificates Coures </h2>
-    <h3>Cisco Certified Network Associate</h3>
-    <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
-</a>
-
+<!-- HERO -->
+<div class="hero" id="home">
+    <div>
+        <h1>Hi, I'm Ahmed 👋</h1>
+        <p>Information Technology Graduate | Networking & Software Enthusiast</p>
+        <a href="#certificates">View My Certificates</a>
+    </div>
 </div>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+    <h2>My Certificates</h2>
+
+    <div class="certificates">
+
+        <div class="card">
+            <h3>University Degree</h3>
+            <p>Bachelor's in Information Technology</p>
+            <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
+            <div class="buttons">
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
+                   target="_blank" class="btn view">View</a>
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
+                   download class="btn download">Download</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>CCNA Certificate</h3>
+            <p>Cisco Certified Network Associate</p>
+            <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
+            <div class="buttons">
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
+                   target="_blank" class="btn view">View</a>
+                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
+                   download class="btn download">Download</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p style="text-align:center;opacity:.85">
+        📧 ahmed@email.com <br>
+        🔗 GitHub / LinkedIn
+    </p>
+</section>
+
+<footer>
+    © 2026 Ahmed Yousif | All Rights Reserved
+</footer>
 
 </body>
 </html>
