@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +22,7 @@ html{
 body{
     background:linear-gradient(135deg,#2c9ad6,#1fd1c1);
     color:#fff;
+    transition: background 0.5s;
 }
 
 /* ===== NAVBAR ===== */
@@ -37,6 +37,11 @@ nav{
     z-index:100;
     background:rgba(0,0,0,.15);
     backdrop-filter:blur(12px);
+    transition: background 0.3s;
+}
+
+nav:hover{
+    background:rgba(0,0,0,.25);
 }
 
 .logo{
@@ -64,7 +69,16 @@ nav a.active{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:120px 8% 0;
+    padding:160px 10% 0;
+    transition: all 0.9s;
+    opacity:0;
+    transform: translateY(50px);
+    transition: all 5s ease;
+}
+
+.hero.show{
+    opacity:1;
+    transform: translateY(0);
 }
 
 .hero-content{
@@ -78,14 +92,12 @@ nav a.active{
 
 .hero-text h1{
     font-size:3.2rem;
-    animation:drop 1s ease;
 }
 
 .hero-text p{
     margin:15px 0 30px;
     opacity:.9;
     line-height:1.6;
-    animation:fade 1.5s ease;
 }
 
 .hero-text a{
@@ -103,10 +115,9 @@ nav a.active{
     box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-/* ===== IMAGE ===== */
+/* ===== HERO IMAGE ===== */
 .hero-image{
     position:relative;
-    animation:up 1.2s ease;
 }
 
 .hero-image img{
@@ -116,6 +127,12 @@ nav a.active{
     border-radius:50%;
     border:6px solid rgba(255,255,255,.4);
     box-shadow:0 20px 50px rgba(0,0,0,.35);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.hero-image:hover img{
+    transform: scale(1.05) rotate(5deg);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
 }
 
 .hero-image::before{
@@ -130,12 +147,21 @@ nav a.active{
 /* ===== SECTIONS ===== */
 section{
     padding:120px 8%;
+    opacity:0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+
+section.show{
+    opacity:1;
+    transform: translateY(0);
 }
 
 section h2{
     text-align:center;
     font-size:2.5rem;
     margin-bottom:50px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,.3);
 }
 
 /* ===== CERTIFICATES ===== */
@@ -153,58 +179,49 @@ section h2{
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.25);
     transition:.5s;
-    animation:up 1s ease;
+    opacity:0;
+    transform: translateY(50px);
+}
+
+.card.show{
+    opacity:1;
+    transform: translateY(0);
 }
 
 .card:hover{
-    transform:translateY(-12px) scale(1.03);
+    transform:translateY(-12px) scale(1.05);
+    background:rgba(255,255,255,.25);
 }
 
 .card img{
     width:90px;
     margin:20px 0;
     transition:.5s;
+    cursor:pointer;
+    border-radius:15px;
 }
 
 .card:hover img{
-    transform:rotate(8deg) scale(1.2);
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:15px;
-}
-
-.btn{
-    padding:10px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:.9rem;
-    font-weight:600;
-    transition:.4s;
-}
-
-.view{
-    background:#fff;
-    color:#000;
-}
-
-.download{
-    background:#00ffd5;
-    color:#000;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
+    transform:scale(1.2) rotate(10deg);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 /* ===== CONTACT ===== */
 .contact{
     text-align:center;
     opacity:.9;
+    font-size:1.1rem;
+}
+
+.contact a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.contact a:hover{
+    color:#00ffd5;
+    text-shadow:1px 1px 5px rgba(0,0,0,.5);
 }
 
 /* ===== FOOTER ===== */
@@ -212,24 +229,31 @@ footer{
     text-align:center;
     padding:30px;
     background:rgba(0,0,0,.2);
+    font-size:0.9rem;
+}
+
+.contact img {
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.contact img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #00ffd5);
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 14ch } /* عدد الأحرف */
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes drop{
-    from{transform:translateY(-40px);opacity:0}
-    to{transform:translateY(0);opacity:1}
-}
-
-@keyframes fade{
-    from{opacity:0}
-    to{opacity:1}
-}
-
-@keyframes up{
-    from{transform:translateY(40px);opacity:0}
-    to{transform:translateY(0);opacity:1}
-}
-
 @keyframes rotate{
     from{transform:rotate(0deg);}
     to{transform:rotate(360deg);}
@@ -268,14 +292,14 @@ footer{
         <div class="hero-text">
             <h1>Hi, I'm Ahmed 👋</h1>
             <p>
-                Information Technology Graduate<br>
-                Networking & Software Enthusiast
+              IT Help Desk | Technical Support | Junior Network Engineer
+                <br>
+               
             </p>
             <a href="#certificates">View My Certificates</a>
         </div>
 
         <div class="hero-image">
-            <!-- ضع صورتك هنا -->
             <img src="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/ahmed.jpg" alt="Ahmed Photo">
         </div>
     </div>
@@ -284,31 +308,22 @@ footer{
 <!-- CERTIFICATES -->
 <section id="certificates">
     <h2>My Certificates</h2>
-
     <div class="certificates">
 
         <div class="card">
             <h3>University Degree</h3>
             <p>Bachelor's in Information Technology</p>
-            <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
-            <div class="buttons">
-                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
-                   target="_blank" class="btn view">View</a>
-                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg"
-                   download class="btn download">Download</a>
-            </div>
+            <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000" alt="University Certificate">
+            </a>
         </div>
 
         <div class="card">
-            <h3>CCNA Certificate</h3>
-            <p>Cisco Certified Network Associate</p>
-            <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
-            <div class="buttons">
-                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
-                   target="_blank" class="btn view">View</a>
-                <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg"
-                   download class="btn download">Download</a>
-            </div>
+            <h3>CCNA COURSES </h3>
+            <p>Cisco Attendance Certified</p>
+            <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA_Certificate.%20.jpg" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000" alt="CCNA Certificate">
+            </a>
         </div>
 
     </div>
@@ -318,8 +333,12 @@ footer{
 <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
-        📧 ahmed@email.com <br>
-        🔗 GitHub | LinkedIn
+        <img src="https://img.icons8.com/?size=32&id=85500&format=png&color=ffffff" alt="Email Icon">
+        <a href="mailto:ahmed@email.com">ahmed@email.com</a> | 
+        <img src="https://img.icons8.com/?size=32&id=106564&format=png&color=ffffff" alt="GitHub Icon">
+        <a href="https://github.com/Ahmedyousif1" target="_blank">GitHub</a> |
+        <img src="https://img.icons8.com/?size=32&id=85141&format=png&color=ffffff" alt="LinkedIn Icon">
+        <a href="https://linkedin.com/in/ahmedyousif1" target="_blank">LinkedIn</a>
     </div>
 </section>
 
@@ -327,5 +346,28 @@ footer{
     © 2026 Ahmed Yousif | All Rights Reserved
 </footer>
 
+<script>
+// Function to reveal elements on scroll
+function revealOnScroll() {
+    const elements = document.querySelectorAll('.hero, section, .card');
+    const windowHeight = window.innerHeight;
+    
+    elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+            el.classList.add('show');
+        }
+    });
+}
+
+// Listen to scroll
+window.addEventListener('scroll', revealOnScroll);
+
+// Initial call
+window.addEventListener('load', revealOnScroll);
+</script>
+
 </body>
 </html>
+
+
