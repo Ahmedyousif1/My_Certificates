@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCNA Certificates | Ahmed Yousif</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#2c9ad6,#1fd1c1);
+    color:#fff;
+}
+
+header{
+    padding:40px 8%;
+    text-align:center;
+}
+
+header h1{
+    font-size:2.8rem;
+}
+
+header a{
+    display:inline-block;
+    margin-top:15px;
+    color:#00ffd5;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.certificates{
+    padding:60px 8% 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+    background:rgba(255,255,255,.25);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card img{
+    width:90px;
+    margin-top:20px;
+    transition:.4s;
+}
+
+.card:hover img{
+    transform:scale(1.2) rotate(8deg);
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:rgba(0,0,0,.2);
+    font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>CCNA Certificates</h1>
+    <p>All my Cisco CCNA related certificates</p>
+    <a href="index.html">← Back to Portfolio</a>
+</header>
+
+<section class="certificates">
+
+    <div class="card">
+        <h3>CCNA Course Attendance</h3>
+        <p>Cisco Certified</p>
+        <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/CCNA.jpg" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Network Addressing</h3>
+        <p>Basic Troubleshooting</p>
+        <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/etwork%20Addressing%20%26%20Basic%20Troubleshooting.jpg" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=IFybWKn8Vo3Y&format=png&color=000000">
+        </a>
+    </div>
+
+    <div class="card">
+        <h3>Certificate Verification</h3>
+        <p>Credly Profile</p>
+        <a href="https://www.credly.com/users/ahmed-mohamed-ahmed-yousif" target="_blank">
+            <img src="https://img.icons8.com/?size=100&id=imamZukNSZr3&format=png&color=000000">
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Ahmed Yousif | CCNA Certificates
+</footer>
+
+</body>
+</html>
