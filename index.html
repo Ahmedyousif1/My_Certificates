@@ -22,7 +22,6 @@ html{
 body{
     background:linear-gradient(135deg,#2c9ad6,#1fd1c1);
     color:#fff;
-    transition: background 0.5s;
 }
 
 /* ===== NAVBAR ===== */
@@ -37,11 +36,6 @@ nav{
     z-index:100;
     background:rgba(0,0,0,.15);
     backdrop-filter:blur(12px);
-    transition: background 0.3s;
-}
-
-nav:hover{
-    background:rgba(0,0,0,.25);
 }
 
 .logo{
@@ -70,10 +64,9 @@ nav a.active{
     align-items:center;
     justify-content:center;
     padding:160px 10% 0;
-    transition: all 0.9s;
     opacity:0;
     transform: translateY(50px);
-    transition: all 5s ease;
+    transition: all 1.2s ease;
 }
 
 .hero.show{
@@ -112,7 +105,6 @@ nav a.active{
 
 .hero-text a:hover{
     transform:scale(1.1);
-    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 /* ===== HERO IMAGE ===== */
@@ -123,16 +115,9 @@ nav a.active{
 .hero-image img{
     width:280px;
     height:280px;
-    object-fit:cover;
     border-radius:50%;
     border:6px solid rgba(255,255,255,.4);
     box-shadow:0 20px 50px rgba(0,0,0,.35);
-    transition: transform 0.5s, box-shadow 0.5s;
-}
-
-.hero-image:hover img{
-    transform: scale(1.05) rotate(5deg);
-    box-shadow:0 25px 60px rgba(0,0,0,.5);
 }
 
 .hero-image::before{
@@ -161,7 +146,6 @@ section h2{
     text-align:center;
     font-size:2.5rem;
     margin-bottom:50px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,.3);
 }
 
 /* ===== CERTIFICATES ===== */
@@ -178,9 +162,10 @@ section h2{
     padding:25px;
     text-align:center;
     box-shadow:0 15px 40px rgba(0,0,0,.25);
-    transition:.5s;
     opacity:0;
     transform: translateY(50px);
+    transition:.5s;
+    cursor:pointer;
 }
 
 .card.show{
@@ -197,31 +182,27 @@ section h2{
     width:90px;
     margin:20px 0;
     transition:.5s;
-    cursor:pointer;
     border-radius:15px;
 }
 
 .card:hover img{
     transform:scale(1.2) rotate(10deg);
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 /* ===== CONTACT ===== */
 .contact{
     text-align:center;
-    opacity:.9;
     font-size:1.1rem;
 }
 
 .contact a{
     color:#fff;
     text-decoration:none;
-    transition:.3s;
 }
 
-.contact a:hover{
-    color:#00ffd5;
-    text-shadow:1px 1px 5px rgba(0,0,0,.5);
+.contact img{
+    vertical-align:middle;
+    margin-right:8px;
 }
 
 /* ===== FOOTER ===== */
@@ -229,34 +210,20 @@ footer{
     text-align:center;
     padding:30px;
     background:rgba(0,0,0,.2);
-    font-size:0.9rem;
-}
-
-.contact img {
-    vertical-align: middle;
-    margin-right: 8px;
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.contact img:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 5px #00ffd5);
-}
-
-
-@keyframes typing {
-    from { width: 0 }
-    to { width: 14ch } /* عدد الأحرف */
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
+    font-size:.9rem;
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes rotate{
-    from{transform:rotate(0deg);}
+    from{transform:rotate(0);}
     to{transform:rotate(360deg);}
+}
+
+@keyframes pageExit{
+    to{
+        opacity:0;
+        transform: translateY(-30px);
+    }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -264,11 +231,6 @@ footer{
     .hero-content{
         flex-direction:column-reverse;
         text-align:center;
-    }
-
-    .hero-image img{
-        width:220px;
-        height:220px;
     }
 }
 </style>
@@ -291,16 +253,11 @@ footer{
     <div class="hero-content">
         <div class="hero-text">
             <h1>Hi, I'm Ahmed 👋</h1>
-            <p>
-              IT Help Desk | IT Support / Technical Support | Junior Network Engineer
-                <br>
-               
-            </p>
+            <p>IT Help Desk | IT Support | Junior Network Engineer</p>
             <a href="#certificates">View My Certificates</a>
         </div>
-
         <div class="hero-image">
-            <img src="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/ahmed.jpg" alt="Ahmed Photo">
+            <img src="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/ahmed.jpg">
         </div>
     </div>
 </div>
@@ -314,33 +271,18 @@ footer{
             <h3>University Degree</h3>
             <p>Bachelor's in Information Technology</p>
             <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/University_Certificate.jpg" target="_blank">
-                <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000" alt="University Certificate">
+                <img src="https://img.icons8.com/?size=100&id=qFrnkFra1loq&format=png&color=000000">
             </a>
         </div>
 
         <div class="card">
-    <h3>CCNA Certificates</h3>
-    <p>View all CCNA related certificates</p>
-    <a href="ccna.html">
-        <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000" alt="CCNA Certificates">
-    </a>
-</div>
+            <h3>CCNA Certificates</h3>
+            <p>View all CCNA related certificates</p>
+            <a href="ccna.html" onclick="goCCNA(event)">
+                <img src="https://img.icons8.com/?size=100&id=5p6kacTUepTZ&format=png&color=000000">
+            </a>
+        </div>
 
-     <div class="card">
-            <h3> Network Addressing & Basic Troubleshooting COURSES </h3>
-            <p>Cisco Attendance Certified</p>
-            <a href="https://raw.githubusercontent.com/Ahmedyousif1/My_Certificates/refs/heads/main/etwork%20Addressing%20%26%20Basic%20Troubleshooting.jpg" target="_blank">
-                <img src="https://img.icons8.com/?size=100&id=IFybWKn8Vo3Y&format=png&color=000000" alt="Network Addressing & Basic Troubleshooting">
-            </a>
-        </div>
-         <div class="card">
-            <h3> Certificate Verification </h3>
-            <p> Click to verify certificates </p>
-            <a href=" https://www.credly.com/users/ahmed-mohamed-ahmed-yousif" target="_blank">
-                <img src="https://img.icons8.com/?size=100&id=imamZukNSZr3&format=png&color=000000" alt="CCNA Certificate">
-            </a>
-        </div>
-       
     </div>
 </section>
 
@@ -362,27 +304,23 @@ footer{
 </footer>
 
 <script>
-// Function to reveal elements on scroll
-function revealOnScroll() {
-    const elements = document.querySelectorAll('.hero, section, .card');
-    const windowHeight = window.innerHeight;
-    
-    elements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
+function revealOnScroll(){
+    document.querySelectorAll('.hero, section, .card').forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
             el.classList.add('show');
         }
     });
 }
 
-// Listen to scroll
-window.addEventListener('scroll', revealOnScroll);
+function goCCNA(e){
+    e.preventDefault();
+    document.body.style.animation = "pageExit 0.6s ease forwards";
+    setTimeout(()=>window.location.href="ccna.html",600);
+}
 
-// Initial call
+window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 </script>
 
 </body>
 </html>
-
-
