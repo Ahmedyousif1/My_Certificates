@@ -140,6 +140,13 @@ footer{
     .page-head{padding:60px 0 36px}
     .logo{font-size:1.05rem}
 }
+@media(max-width:600px){
+    .back span{display:none}
+    .back{padding:8px 12px}
+    .lang-btn{padding:6px 14px}
+    .certs{grid-template-columns:1fr}
+    .cert{padding:22px}
+}
 </style>
 </head>
 
@@ -150,7 +157,7 @@ footer{
     <div class="container nav-inner">
         <a href="index.html" class="logo" onclick="exitPage(event)">Ahmed<span>.</span>Yousif</a>
         <div class="nav-actions">
-        <a href="index.html" class="back" onclick="exitPage(event)">
+        <a href="index.html" class="back" aria-label="Back to Portfolio" onclick="exitPage(event)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
             <span data-i18n="back">Back to Portfolio</span>
         </a>
