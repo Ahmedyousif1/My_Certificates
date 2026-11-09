@@ -355,7 +355,166 @@ footer{
     © 2026 Ahmed Yousif | All Rights Reserved
 </footer>
 
-<script src="lang.js"></script>
+<script>
+/* Language toggle (English / Arabic) – shared by index.html and ccna.html */
+(function () {
+    var dict = {
+        en: {
+            title_index: "Ahmed Yousif | IT Support & Network Technician",
+            title_ccna: "CCNA Certificates | Ahmed Yousif",
+
+            nav_home: "Home",
+            nav_skills: "Skills",
+            nav_certs: "Certificates",
+            nav_contact: "Contact",
+
+            badge: "Open to opportunities",
+            hero_h1: "Hi, I'm <span>Ahmed Yousif</span>",
+            hero_lead: "I keep systems and networks running smoothly — solving technical problems quickly and supporting users with clear communication.",
+            role1: "IT Help Desk",
+            role2: "IT Support",
+            role3: "Junior Network Technician",
+            btn_certs: "View Certificates",
+            btn_contact: "Contact Me",
+
+            skills_eyebrow: "What I do",
+            skills_title: "Core Skills",
+            skills_sub: "A practical skill set built for day-to-day IT operations and network support.",
+            skill1_t: "Help Desk Support",
+            skill1_p: "Handling tickets, assisting users and resolving issues efficiently.",
+            skill2_t: "Networking",
+            skill2_p: "Network setup, configuration and troubleshooting based on CCNA knowledge.",
+            skill3_t: "Troubleshooting",
+            skill3_p: "Diagnosing hardware, software and connectivity problems step by step.",
+            skill4_t: "Systems & Devices",
+            skill4_p: "Installing, maintaining and supporting computers and peripherals.",
+
+            certs_eyebrow: "Education & Credentials",
+            certs_title: "My Certificates",
+            certs_sub: "Academic and professional qualifications that support my work.",
+            uni_t: "University Degree",
+            uni_p: "Bachelor's in Information Technology",
+            view_cert: "View certificate",
+            ccna_t: "CCNA Certificates",
+            ccna_p: "View all CCNA related certificates",
+            ccna_link: "View certificates",
+
+            contact_eyebrow: "Get in touch",
+            contact_title: "Contact Me",
+            contact_sub: "Interested in working together? Reach out through any of these channels.",
+            lbl_email: "Email",
+            footer: "© 2026 Ahmed Yousif | All Rights Reserved",
+
+            ccna_eyebrow: "Cisco Networking",
+            ccna_h1: "CCNA <span>Certificates</span>",
+            ccna_head_p: "All my Cisco CCNA related certificates",
+            back: "Back to Portfolio",
+            c1_t: "CCNA Course Attendance",
+            c1_p: "Cisco Certified",
+            c2_t: "Network Addressing",
+            c2_p: "Basic Troubleshooting",
+            c3_t: "Certificate Verification",
+            c3_p: "Credly Profile",
+            verify: "Verify on Credly",
+            footer_ccna: "© 2026 Ahmed Yousif | CCNA Certificates"
+        },
+        ar: {
+            title_index: "أحمد يوسف | دعم فني وفني شبكات",
+            title_ccna: "شهادات CCNA | أحمد يوسف",
+
+            nav_home: "الرئيسية",
+            nav_skills: "المهارات",
+            nav_certs: "الشهادات",
+            nav_contact: "تواصل",
+
+            badge: "متاح لفرص العمل",
+            hero_h1: "مرحباً، أنا <span>أحمد يوسف</span>",
+            hero_lead: "أحافظ على سير الأنظمة والشبكات بسلاسة، وأحلّ المشكلات التقنية بسرعة، وأدعم المستخدمين بتواصل واضح.",
+            role1: "مكتب المساعدة التقني (Help Desk)",
+            role2: "دعم تقنية المعلومات",
+            role3: "فني شبكات مبتدئ",
+            btn_certs: "عرض الشهادات",
+            btn_contact: "تواصل معي",
+
+            skills_eyebrow: "ما أقدّمه",
+            skills_title: "المهارات الأساسية",
+            skills_sub: "مجموعة مهارات عملية تلبّي احتياجات العمل اليومي في تقنية المعلومات ودعم الشبكات.",
+            skill1_t: "دعم مكتب المساعدة",
+            skill1_p: "معالجة التذاكر ومساعدة المستخدمين وحل المشكلات بكفاءة.",
+            skill2_t: "الشبكات",
+            skill2_p: "إعداد الشبكات وضبطها واستكشاف أعطالها اعتماداً على معرفة CCNA.",
+            skill3_t: "استكشاف الأخطاء وإصلاحها",
+            skill3_p: "تشخيص مشكلات الأجهزة والبرمجيات والاتصال خطوة بخطوة.",
+            skill4_t: "الأنظمة والأجهزة",
+            skill4_p: "تركيب وصيانة ودعم أجهزة الحاسوب وملحقاتها.",
+
+            certs_eyebrow: "التعليم والمؤهلات",
+            certs_title: "شهاداتي",
+            certs_sub: "مؤهلات أكاديمية ومهنية تدعم عملي.",
+            uni_t: "الدرجة الجامعية",
+            uni_p: "بكالوريوس في تقنية المعلومات",
+            view_cert: "عرض الشهادة",
+            ccna_t: "شهادات CCNA",
+            ccna_p: "عرض جميع الشهادات المتعلقة بـ CCNA",
+            ccna_link: "عرض الشهادات",
+
+            contact_eyebrow: "ابقَ على تواصل",
+            contact_title: "تواصل معي",
+            contact_sub: "مهتم بالعمل معاً؟ تواصل معي عبر أي من هذه القنوات.",
+            lbl_email: "البريد الإلكتروني",
+            footer: "© 2026 أحمد يوسف | جميع الحقوق محفوظة",
+
+            ccna_eyebrow: "شبكات Cisco",
+            ccna_h1: "شهادات <span>CCNA</span>",
+            ccna_head_p: "جميع شهاداتي المتعلقة بـ Cisco CCNA",
+            back: "العودة إلى الموقع",
+            c1_t: "حضور دورة CCNA",
+            c1_p: "معتمد من Cisco",
+            c2_t: "عنونة الشبكات",
+            c2_p: "استكشاف الأخطاء الأساسية",
+            c3_t: "التحقق من الشهادات",
+            c3_p: "ملف Credly",
+            verify: "التحقق عبر Credly",
+            footer_ccna: "© 2026 أحمد يوسف | شهادات CCNA"
+        }
+    };
+
+    var lang = "en";
+    try {
+        var saved = localStorage.getItem("lang");
+        if (saved === "ar" || saved === "en") lang = saved;
+    } catch (e) {}
+
+    function apply(l) {
+        lang = l;
+        var root = document.documentElement;
+        root.lang = l;
+        root.dir = l === "ar" ? "rtl" : "ltr";
+
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+            var v = dict[l][el.getAttribute("data-i18n")];
+            if (v === undefined) return;
+            if (el.tagName === "TITLE") el.textContent = v;
+            else el.innerHTML = v;
+        });
+
+        var btn = document.getElementById("langBtn");
+        if (btn) {
+            btn.textContent = l === "ar" ? "English" : "العربية";
+            btn.setAttribute("aria-label", l === "ar" ? "Switch to English" : "التبديل إلى العربية");
+        }
+        try { localStorage.setItem("lang", l); } catch (e) {}
+    }
+
+    var btn = document.getElementById("langBtn");
+    if (btn) btn.addEventListener("click", function () {
+        apply(lang === "ar" ? "en" : "ar");
+    });
+
+    apply(lang);
+})();
+
+</script>
 <script>
 /* Reveal on scroll */
 const io = new IntersectionObserver((entries)=>{
