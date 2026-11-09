@@ -204,6 +204,26 @@ footer{
     .nav-links a{padding:8px 10px;font-size:.85rem}
     section{padding:70px 0}
 }
+.lang-btn{margin-inline-start:0}
+
+@media(max-width:600px){
+    html{scroll-padding-top:120px}
+    .nav-inner{height:auto;flex-wrap:wrap;padding:10px 0;row-gap:8px}
+    .logo{order:1}
+    .lang-btn{order:2;padding:6px 14px}
+    .nav-links{order:3;width:100%;justify-content:space-between;gap:0}
+    .nav-links a{flex:1;text-align:center;padding:8px 4px;font-size:.85rem}
+    .hero{min-height:auto;padding:140px 0 60px}
+    .hero-grid{gap:30px}
+    .hero h1{font-size:2.2rem}
+    .hero p.lead{font-size:1rem}
+    .btns{flex-direction:column}
+    .btn{width:100%;justify-content:center}
+    section{padding:60px 0}
+    .section-sub{margin-bottom:32px}
+    .certs,.skills{grid-template-columns:1fr}
+    .cert,.skill,.contact-card{padding:22px}
+}
 </style>
 </head>
 
@@ -218,8 +238,8 @@ footer{
             <a href="#skills" data-i18n="nav_skills">Skills</a>
             <a href="#certificates" data-i18n="nav_certs">Certificates</a>
             <a href="#contact" data-i18n="nav_contact">Contact</a>
-            <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">العربية</button>
         </div>
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">العربية</button>
     </div>
 </nav>
 
